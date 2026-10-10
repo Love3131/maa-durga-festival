@@ -1,0 +1,423 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Jai Mata Di 🙏 | Maa Durga Blessings</title>
+  <meta name="description" content="May Maa Durga bless you and your family with happiness, peace, strength and prosperity. Jai Mata Di!" />
+  <meta name="theme-color" content="#4b0714" />
+
+  <!-- WhatsApp and social sharing preview -->
+  <meta property="og:title" content="Jai Mata Di 🙏" />
+  <meta property="og:description" content="Receive Maa Durga's blessings. Share this divine greeting with your loved ones." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="maa-durga.png" />
+
+  <style>
+    :root {
+      --gold: #ffd77a;
+      --cream: #fff4dc;
+      --red: #5a0718;
+      --deep-red: #27020c;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--cream);
+      background:
+        radial-gradient(ellipse at top, #8f1723 0%, var(--red) 48%, var(--deep-red) 100%);
+      text-align: center;
+    }
+
+    .top-line {
+      height: 5px;
+      background: linear-gradient(90deg, #b76a16, #fff0a9, #d78a27, #fff0a9);
+    }
+
+    .page {
+      width: min(100% - 28px, 760px);
+      margin: auto;
+      padding: 28px 0 35px;
+    }
+
+    .om {
+      color: var(--gold);
+      font-size: 40px;
+      margin: 8px 0;
+      text-shadow: 0 0 25px #ffb329;
+    }
+
+    .eyebrow {
+      font-family: Arial, sans-serif;
+      font-size: 11px;
+      letter-spacing: 4px;
+      color: var(--gold);
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 12px 0;
+      font-size: clamp(36px, 8vw, 65px);
+      line-height: 1.1;
+      color: #ffe7a5;
+      text-shadow: 0 3px 20px #e75b22;
+    }
+
+    .subtitle {
+      font-size: clamp(16px, 3.5vw, 21px);
+      line-height: 1.7;
+      margin: 12px auto 22px;
+      max-width: 540px;
+      color: #fff0d2;
+    }
+
+    .image-frame {
+      position: relative;
+      max-width: 490px;
+      margin: 22px auto;
+      padding: 7px;
+      border-radius: 240px 240px 24px 24px;
+      border: 1px solid var(--gold);
+      background: linear-gradient(135deg, #ffe6a2, #a64c19, #ffe6a2);
+      box-shadow: 0 0 35px #ffb02e38;
+    }
+
+    .image-frame img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 235px 235px 19px 19px;
+      background: #3c0610;
+    }
+
+    .image-caption {
+      color: var(--gold);
+      font-size: 13px;
+      margin: 14px 0 22px;
+      letter-spacing: 1px;
+    }
+
+    .blessing {
+      max-width: 550px;
+      margin: 25px auto;
+      padding: 20px 15px;
+      border-top: 1px solid #e8b85c80;
+      border-bottom: 1px solid #e8b85c80;
+      font-size: 20px;
+      line-height: 1.8;
+      color: #fff2d6;
+    }
+
+    .blessing strong {
+      color: var(--gold);
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+      margin: 26px 0;
+    }
+
+    .btn {
+      border: 1px solid var(--gold);
+      border-radius: 50px;
+      padding: 14px 23px;
+      min-width: 190px;
+      font-size: 15px;
+      font-weight: bold;
+      text-decoration: none;
+      cursor: pointer;
+      transition: transform .2s, box-shadow .2s;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 22px #ffcb6740;
+    }
+
+    .btn-primary {
+      color: #47101a;
+      background: linear-gradient(135deg, #fff0b2, #eeb44c);
+    }
+
+    .btn-secondary {
+      color: var(--cream);
+      background: #ffffff0b;
+    }
+
+    .footer {
+      margin-top: 36px;
+      font-family: Arial, sans-serif;
+      font-size: 12px;
+      color: #e7c9c2;
+      line-height: 1.8;
+    }
+
+    .footer a {
+      color: var(--gold);
+      text-decoration: none;
+    }
+
+    /* Instagram invitation popup */
+    .overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 10;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      background: #160007d9;
+      backdrop-filter: blur(5px);
+    }
+
+    .overlay.show {
+      display: flex;
+    }
+
+    .popup {
+      position: relative;
+      width: min(100%, 390px);
+      padding: 30px 23px;
+      border: 1px solid var(--gold);
+      border-radius: 22px;
+      background: linear-gradient(150deg, #761023, #30030d);
+      box-shadow: 0 0 45px #ffba4650;
+      animation: appear .25s ease-out;
+    }
+
+    @keyframes appear {
+      from { opacity: 0; transform: translateY(12px) scale(.97); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    .popup-symbol {
+      font-size: 38px;
+    }
+
+    .popup h2 {
+      color: var(--gold);
+      font-size: 27px;
+      margin: 12px 0;
+    }
+
+    .popup p {
+      line-height: 1.7;
+      color: #fff0d7;
+    }
+
+    .close {
+      position: absolute;
+      top: 10px;
+      right: 14px;
+      color: white;
+      border: 0;
+      background: transparent;
+      font-size: 27px;
+      cursor: pointer;
+    }
+
+    .popup .btn {
+      display: block;
+      width: 100%;
+      margin: 12px 0;
+    }
+
+    .toast {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #fff0d7;
+      color: #4b0714;
+      border-radius: 30px;
+      padding: 12px 20px;
+      font: 14px Arial, sans-serif;
+      display: none;
+      z-index: 20;
+      width: max-content;
+      max-width: calc(100% - 30px);
+    }
+
+    @media (max-width: 480px) {
+      .page { padding-top: 20px; }
+      .btn { width: 100%; }
+      .actions { padding: 0 8px; }
+      .blessing { font-size: 18px; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="top-line"></div>
+
+  <main class="page">
+    <div class="om" aria-hidden="true">ॐ</div>
+    <div class="eyebrow">A little blessing for you</div>
+
+    <h1>Jai Mata Di</h1>
+
+    <p class="subtitle">
+      May Maa Durga fill your life with courage, happiness,
+      peace and endless blessings. 🙏
+    </p>
+
+    <div class="image-frame">
+      <!-- Save your Maa Durga image as maa-durga.jpg in this same folder -->
+      <img
+        src="maa-durga.png"
+        alt="Maa Durga, the divine mother"
+        onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
+      />
+      <div style="display:none; padding:65px 15px; line-height:2;">
+        <div style="font-size:70px;">🙏</div>
+        <strong style="color:#ffd77a;font-size:24px;">Maa Durga</strong>
+        <p>Add your image as <b>maa-durga.jpg</b></p>
+      </div>
+    </div>
+
+    <div class="image-caption">🌺 SHUBH NAVRATRI · DIVINE BLESSINGS 🌺</div>
+
+    <div class="blessing">
+      <strong>माँ दुर्गा आपकी सभी मनोकामनाएँ पूर्ण करें।</strong>
+      <br />
+      आपके परिवार में सुख, शांति, समृद्धि और खुशियाँ बनी रहें।
+      <br />
+      जय माता दी! 🙏
+    </div>
+
+    <div class="actions">
+      <button class="btn btn-primary" id="shareBtn">
+        💌 Share Blessings
+      </button>
+
+      <button class="btn btn-secondary" id="followBtn">
+        ❤️ Visit EruDigm on Instagram
+      </button>
+    </div>
+
+    <div class="footer">
+      Made with devotion ❤️<br />
+      Share the blessings with someone you love.
+      <br /><br />
+      <a href="#" id="footerInstagram">EruDigm · Instagram</a>
+    </div>
+  </main>
+
+  <!-- Optional Instagram invitation -->
+  <div class="overlay" id="overlay" role="dialog"
+       aria-modal="true" aria-labelledby="popupTitle">
+    <div class="popup">
+      <button class="close" id="closeBtn" aria-label="Close popup">×</button>
+      <div class="popup-symbol">🌺🙏🌺</div>
+      <h2 id="popupTitle">Spread the Positivity!</h2>
+      <p>
+        If this divine greeting brought a smile to your face,
+        join us on Instagram for more AI, technology and creativity
+        from EruDigm.
+      </p>
+      <a class="btn btn-primary" id="instagramBtn"
+         href="#" target="_blank" rel="noopener noreferrer">
+        Follow EruDigm on Instagram
+      </a>
+      <button class="btn btn-secondary" id="laterBtn">
+        Maybe Later
+      </button>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script>
+    // IMPORTANT: Replace this with your actual Instagram username.
+    const INSTAGRAM_USERNAME = "erudigm2026";
+
+    const instagramUrl =
+      "https://www.instagram.com/" +
+      INSTAGRAM_USERNAME.replace(/^@/, "") + "/";
+
+    const overlay = document.getElementById("overlay");
+    const toast = document.getElementById("toast");
+    let toastTimer;
+
+    document.getElementById("instagramBtn").href = instagramUrl;
+    document.getElementById("footerInstagram").href = instagramUrl;
+
+    function showToast(message) {
+      toast.textContent = message;
+      toast.style.display = "block";
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => {
+        toast.style.display = "none";
+      }, 2800);
+    }
+
+    function openPopup() {
+      if (INSTAGRAM_USERNAME === "YOUR_INSTAGRAM_USERNAME") {
+        showToast("Add your Instagram username in the code first.");
+        return;
+      }
+      overlay.classList.add("show");
+    }
+
+    function closePopup() {
+      overlay.classList.remove("show");
+    }
+
+    document.getElementById("followBtn").addEventListener("click", openPopup);
+    document.getElementById("closeBtn").addEventListener("click", closePopup);
+    document.getElementById("laterBtn").addEventListener("click", closePopup);
+
+    overlay.addEventListener("click", function(event) {
+      if (event.target === overlay) closePopup();
+    });
+
+    document.addEventListener("keydown", function(event) {
+      if (event.key === "Escape") closePopup();
+    });
+
+    document.getElementById("shareBtn").addEventListener("click", async function() {
+      const shareData = {
+        title: "Jai Mata Di 🙏",
+        text: "May Maa Durga bless you and your family with happiness and peace. Jai Mata Di! 🌺",
+        url: window.location.href
+      };
+
+      try {
+        if (navigator.share) {
+          await navigator.share(shareData);
+        } else if (navigator.clipboard && window.isSecureContext) {
+          await navigator.clipboard.writeText(
+            shareData.text + "\n" + shareData.url
+          );
+          showToast("Greeting link copied! Share it with your loved ones.");
+        } else {
+          showToast("Copy this page's link from your browser address bar to share.");
+        }
+      } catch (error) {
+        if (error.name !== "AbortError") {
+          showToast("Please copy the page link from your browser to share.");
+        }
+      }
+    });
+
+    // The greeting remains visible without requiring an Instagram follow.
+  </script>
+</body>
+</html>
