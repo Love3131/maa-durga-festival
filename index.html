@@ -9,11 +9,22 @@
   <meta name="description" content="May Maa Durga bless you and your family with happiness, peace, strength and prosperity. Jai Mata Di!" />
   <meta name="theme-color" content="#4b0714" />
 
-  <!-- WhatsApp and social sharing preview -->
-  <meta property="og:title" content="Jai Mata Di 🙏" />
-  <meta property="og:description" content="Receive Maa Durga's blessings. Share this divine greeting with your loved ones." />
+  <!-- Social sharing preview: use absolute HTTPS URLs -->
+  <link rel="canonical" href="https://maa-durga-festival-62lep2foo-intelli-craft.vercel.app/" />
+
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="maa-durga.png" />
+  <meta property="og:site_name" content="Maa Durga Blessings" />
+  <meta property="og:url" content="https://maa-durga-festival-62lep2foo-intelli-craft.vercel.app/" />
+  <meta property="og:title" content="Jai Mata Di 🙏 | Maa Durga Blessings" />
+  <meta property="og:description" content="May Maa Durga bless your family with happiness, courage, prosperity and peace. Share these divine blessings with your loved ones. 🌺" />
+  <meta property="og:image" content="https://maa-durga-festival-62lep2foo-intelli-craft.vercel.app/maa-durga.png" />
+  <meta property="og:image:secure_url" content="https://maa-durga-festival-62lep2foo-intelli-craft.vercel.app/maa-durga.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:alt" content="Maa Durga — divine blessings and Jai Mata Di greeting" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Jai Mata Di 🙏 | Maa Durga Blessings" />
+  <meta name="twitter:description" content="May Maa Durga bless your family with happiness, courage, prosperity and peace. 🌺" />
+  <meta name="twitter:image" content="https://maa-durga-festival-62lep2foo-intelli-craft.vercel.app/maa-durga.png" />
 
   <style>
     :root {
@@ -23,21 +34,16 @@
       --deep-red: #27020c;
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
-    html {
-      scroll-behavior: smooth;
-    }
+    html { scroll-behavior: smooth; }
 
     body {
       margin: 0;
       min-height: 100vh;
       font-family: Georgia, "Times New Roman", serif;
       color: var(--cream);
-      background:
-        radial-gradient(ellipse at top, #8f1723 0%, var(--red) 48%, var(--deep-red) 100%);
+      background: radial-gradient(ellipse at top, #8f1723 0%, var(--red) 48%, var(--deep-red) 100%);
       text-align: center;
     }
 
@@ -122,9 +128,7 @@
       color: #fff2d6;
     }
 
-    .blessing strong {
-      color: var(--gold);
-    }
+    .blessing strong { color: var(--gold); }
 
     .actions {
       display: flex;
@@ -174,7 +178,6 @@
       text-decoration: none;
     }
 
-    /* Instagram invitation popup */
     .overlay {
       position: fixed;
       inset: 0;
@@ -187,9 +190,7 @@
       backdrop-filter: blur(5px);
     }
 
-    .overlay.show {
-      display: flex;
-    }
+    .overlay.show { display: flex; }
 
     .popup {
       position: relative;
@@ -207,9 +208,7 @@
       to { opacity: 1; transform: translateY(0) scale(1); }
     }
 
-    .popup-symbol {
-      font-size: 38px;
-    }
+    .popup-symbol { font-size: 38px; }
 
     .popup h2 {
       color: var(--gold);
@@ -279,7 +278,6 @@
     </p>
 
     <div class="image-frame">
-      <!-- Save your Maa Durga image as maa-durga.jpg in this same folder -->
       <img
         src="maa-durga.png"
         alt="Maa Durga, the divine mother"
@@ -288,7 +286,7 @@
       <div style="display:none; padding:65px 15px; line-height:2;">
         <div style="font-size:70px;">🙏</div>
         <strong style="color:#ffd77a;font-size:24px;">Maa Durga</strong>
-        <p>Add your image as <b>maa-durga.jpg</b></p>
+        <p>Please check that maa-durga.png is in the website folder.</p>
       </div>
     </div>
 
@@ -303,26 +301,19 @@
     </div>
 
     <div class="actions">
-      <button class="btn btn-primary" id="shareBtn">
-        💌 Share Blessings
-      </button>
-
-      <button class="btn btn-secondary" id="followBtn">
-        ❤️ Visit EruDigm on Instagram
-      </button>
+      <button class="btn btn-primary" id="shareBtn">💌 Share Blessings</button>
+      <button class="btn btn-secondary" id="followBtn">❤️ Visit EruDigm on Instagram</button>
     </div>
 
     <div class="footer">
       Made with devotion ❤️<br />
       Share the blessings with someone you love.
       <br /><br />
-      <a href="#" id="footerInstagram">EruDigm · Instagram</a>
+      <a href="https://www.instagram.com/erudigm2026/" id="footerInstagram" target="_blank" rel="noopener noreferrer">EruDigm · Instagram</a>
     </div>
   </main>
 
-  <!-- Optional Instagram invitation -->
-  <div class="overlay" id="overlay" role="dialog"
-       aria-modal="true" aria-labelledby="popupTitle">
+  <div class="overlay" id="overlay" role="dialog" aria-modal="true" aria-labelledby="popupTitle">
     <div class="popup">
       <button class="close" id="closeBtn" aria-label="Close popup">×</button>
       <div class="popup-symbol">🌺🙏🌺</div>
@@ -333,21 +324,18 @@
         from EruDigm.
       </p>
       <a class="btn btn-primary" id="instagramBtn"
-         href="#" target="_blank" rel="noopener noreferrer">
+         href="https://www.instagram.com/erudigm2026/"
+         target="_blank" rel="noopener noreferrer">
         Follow EruDigm on Instagram
       </a>
-      <button class="btn btn-secondary" id="laterBtn">
-        Maybe Later
-      </button>
+      <button class="btn btn-secondary" id="laterBtn">Maybe Later</button>
     </div>
   </div>
 
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
   <script>
-    // IMPORTANT: Replace this with your actual Instagram username.
     const INSTAGRAM_USERNAME = "erudigm2026";
-
     const instagramUrl =
       "https://www.instagram.com/" +
       INSTAGRAM_USERNAME.replace(/^@/, "") + "/";
@@ -369,10 +357,6 @@
     }
 
     function openPopup() {
-      if (INSTAGRAM_USERNAME === "YOUR_INSTAGRAM_USERNAME") {
-        showToast("Add your Instagram username in the code first.");
-        return;
-      }
       overlay.classList.add("show");
     }
 
@@ -394,8 +378,8 @@
 
     document.getElementById("shareBtn").addEventListener("click", async function() {
       const shareData = {
-        title: "Jai Mata Di 🙏",
-        text: "May Maa Durga bless you and your family with happiness and peace. Jai Mata Di! 🌺",
+        title: "Jai Mata Di 🙏 | Maa Durga Blessings",
+        text: "May Maa Durga bless you and your family with happiness, courage and peace. Jai Mata Di! 🌺",
         url: window.location.href
       };
 
@@ -406,9 +390,9 @@
           await navigator.clipboard.writeText(
             shareData.text + "\n" + shareData.url
           );
-          showToast("Greeting link copied! Share it with your loved ones.");
+          showToast("Greeting message and link copied!");
         } else {
-          showToast("Copy this page's link from your browser address bar to share.");
+          showToast("Copy the page link from your browser to share.");
         }
       } catch (error) {
         if (error.name !== "AbortError") {
@@ -416,8 +400,6 @@
         }
       }
     });
-
-    // The greeting remains visible without requiring an Instagram follow.
   </script>
 </body>
 </html>
